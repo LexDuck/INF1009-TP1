@@ -1,0 +1,17 @@
+Calculateur IP
+À l’aide du langage de programmation de votre choix et sans l’utilisation d’aucune librairie et de fonctions spécifiques à l’univers de la réseautique, vous devez réaliser un calculateur réseau permettant de calculer les fonctionnalités suivantes. L’utilisation de services externes tels que des API est interdite pour ce travail. La construction de structures de données (tableaux, piles, files, listes chainées, etc.) ou l’utilisation de la programmation objet est permise.
+Plus précisément, à partir d’une adresse ip et de son masque (/23, /24,/25…), votre programme doit calculer les informations suivantes :
+-	Le nombre d’adresses IP disponibles dans ce réseau (2 points)
+-	Le nombre d’adresses IP utilisables dans ce réseau (2 points)
+-	L’adresse du masque de sous-réseaux (si applicable) (2 points)
+-	L’adresse du réseau (4 points)
+-	L’adresse de la première adresse disponible sur ce réseau (4 points)
+-	L’adresse de la dernière adresse disponible sur ce réseau (4 points)
+-	L’adresse de diffusion (4 points)
+-	Est-ce qu’il s’agit d’une adresse routable (locale ou non), de bouclage ou link-local? (3 points)?
+-	La possibilité de sous-diviser un réseau en plusieurs sous-réseaux à l’aide de la technique du variable length subnet mask (VLSM) ou toute autre méthode valable. (12 points)
+Chacune de vos fonctions doit être obligatoirement accompagnée de commentaires en français expliquant et justifiant vos différents calculs. Le code étant présent sans commentaire ne sera pas corrigé. 
+Les variables, les constantes et vos noms de fonctions doivent également être en français tout au long de votre programme. Évidemment, votre programme doit fonctionner avec les adresses ip de type IPV4 et IPV6.
+Des points seront accordés sur le professionnalisme, la robustesse et la facilité d’utilisation de votre programme (18 points).
+Lors de la remise, vous devez fournir un lien vidéo privé démontrant les fonctionnalités de votre programme ainsi que le code source nécessaire au fonctionnement de votre programme. Il est primordial de mettre le nom de chacun des membres dans le vidéo final pour l’obtention des points.
+Le travail doit être fait en équipe de 3 personnes maximum et doit être remis pour le 28 février 2024 à minuit.
