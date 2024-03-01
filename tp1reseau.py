@@ -4,8 +4,6 @@ cond = Msq4 -> verifie pour le masque en v4
 cond = v4 -> verifie pour Ipv4
 cond = v6 -> verifie pour Ipv6
 """
-
-
 def verif_input(cond):
     """avec trop de commentaire c'est limite moi clair verifie pour liste d'input"""
     if cond is ["a"]: txt_de_confirm = "Veuillez entrez une option valide parmis: " + ",".join(cond)
@@ -38,14 +36,25 @@ def verif_input(cond):
 
         except ValueError:  # executer si fcts int() plante ou si les conditions plus haut ne sont pas respecter
             if cond == "Msq4": print("N'est pas un chiffre entre 4 et 30")  # rejection Msq4
-            if cond == "Msq6": print ("N'est pas un chiffre entre 4 et 126")
+            if cond == "Msq6": print ("N'est pas un chiffre entre 4 et 126") # rejecction Msq6
             if cond == "v4": print("N'est pas un chiffre entre 0 et 255")  # rejection v4
             if cond == "v6": print("N'est pas un chiffre entre 0 et FFFF")  # rejection v6
 
             continue  # on continue a tourner en rond
 
         if char[0] in cond: return char[0]  # si le premier char est dans notre liste de condition on retourne sinon ...
-        print(txt_de_confirm)  # on imprime le message formatter plus haut avec condition pi on boucle
+        if cond is ["a"]:print(txt_de_confirm)  # on imprime le message formatter plus haut avec condition pi on boucle
+"""Fonction prennant un string binaires et une version et retournant une addresse ip formatter"""
+def binaire_a_adresse(ip,cond):
+    ipString = '' #Initilasation du string
+    if cond == "ipv6": #formattage ipv6 ish
+        for i in range(8):#check les blocs de 16 bits
+            ipString+=(":"+format(int(ip[i*16:i*16+16], 2),'x'))#convertie en hexadecimal
+        return ipString[1:]# chop chop le premier character du string
+    if cond == "ipv4": # formatage ipv4
+        for i in range(4): #4 bloc de 4 bits
+            ipString+=(","+str(int(ip[i*4:i*4+4], 2)))# formate les bits vers du decimal
+        return ipString[1:]# chop chop la virgule
 
 
 ip = ""  # initialisation d'un String qui contiendra l'adresse ip en binaire
@@ -64,5 +73,9 @@ while True:  # Boucle infini pour calcul adressage q quitte le programme dans n'
         masque = verif_input("Msq6")  # trouve valeurs du masque en ipv6
         print("Veuillez entrer la valeurs de l'adresse Ipv6 en hexagonal, un bloc a la fois: ")
         for i in range(8): ip += verif_input("v6")  # prend un bloc de l'adresse ipv6 a la fois sur une boucle qui boucle 8 fois retourne binaire
+        if ip[:7] == "1111110": print("L'adresse fournit est une adresse locale seulement")#commence par FC00::/7
+        print(binaire_a_adresse(ip,"ipv6"))
+
     print(ip)
     print(len(ip))
+    del ip
