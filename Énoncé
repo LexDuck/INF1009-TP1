@@ -4,9 +4,9 @@ Plus précisément, à partir d’une adresse ip et de son masque (/23, /24,/25�
 -	Le nombre d’adresses IP disponibles dans ce réseau (2 points)
 -	Le nombre d’adresses IP utilisables dans ce réseau (2 points)
 -	L’adresse du masque de sous-réseaux (si applicable) (2 points)
--	L’adresse du réseau (4 points)
--	L’adresse de la première adresse disponible sur ce réseau (4 points)
--	L’adresse de la dernière adresse disponible sur ce réseau (4 points)
+-	L’adresse du réseau (4 points) good
+-	L’adresse de la première adresse disponible sur ce réseau (4 points)good
+-	L’adresse de la dernière adresse disponible sur ce réseau (4 points)good
 -	L’adresse de diffusion (4 points)
 -	Est-ce qu’il s’agit d’une adresse routable (locale ou non), de bouclage ou link-local? (3 points)?
 -	La possibilité de sous-diviser un réseau en plusieurs sous-réseaux à l’aide de la technique du variable length subnet mask (VLSM) ou toute autre méthode valable. (12 points)
