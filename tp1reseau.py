@@ -35,10 +35,10 @@ def verif_input(cond):
                 char = abs(int(char))  # transforme l'input en chiffre
                 if char <= 255: return format(char, "08b") # verifie pour ipv4 retourne binaire
                 raise ValueError  # si aucune condition est satisfaite exectute le bloc une ligne plus bas
-            if cond == "v6":
+            if cond == "v6": # condition d'erreur de l'adresse du ipv6
                 for i in range(len(char)):
-                    if not char[i] in "0123456789abcdef" : raise ValueError
-                bits = format(int(char,16),"016b")
+                    if not char[i] in "0123456789abcdef" : raise ValueError # message d'erreur en cas de de non comformiter
+                bits = format(int(char,16),"016b") # farmatage en bit
                 if len(bits) <= 16: return bits
                 raise ValueError  # si aucune condition est satisfaite exectute le bloc une ligne plus bas
 
@@ -54,7 +54,7 @@ def verif_input(cond):
         if char[0] in cond: return char[0]  # si le premier char est dans notre liste de condition on retourne sinon ...
         if cond is ["a"]:print(txt_de_confirm)  # on imprime le message formatter plus haut avec condition pi on boucle
 """Fonction prennant un string binaires et une version et retournant une addresse ip formatter"""
-def binaire_a_adresse(ip,cond):
+def binaire_a_adresse(ip,cond): # fonction qui format du binaire en adresse ip
     ipString = '' #Initilasation du string
     if cond == "ipv6": #formattage ipv6 ish
         for i in range(8):#check les blocs de 16 bits
@@ -136,7 +136,7 @@ while True:  # Boucle infini pour calcul adressage q quitte le programme dans n'
     if Cond == "b": #ipv6
         print("Veuillex indiquez la valeur du masque (entre 4 et 126): ")  # ... clair
         masque = verif_input("Msq6")  # trouve valeurs du masque en ipv6
-        print("Veuillez entrer la valeurs de l'adresse Ipv6 en hexagonal, un bloc a la fois: ")
+        print("Veuillez entrer la valeurs de l'adresse Ipv6 en hexagonal, un bloc a la fois: ") #... clair
         for i in range(8): ip += verif_input("v6")  # prend un bloc de l'adresse ipv6 a la fois sur une boucle qui boucle 8 fois retourne binaire
         formatteur_ip = adressage(ip, masque)  #creation de l'object adressage
         print("l'adresse calculer : " + binaire_a_adresse(ip, "ipv6"))  # affiche l'adresse calculer
