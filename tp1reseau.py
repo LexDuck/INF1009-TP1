@@ -108,10 +108,10 @@ class adressage:#nitialisation de la classe d'adressage#
             sous_reseau += "1" #ajout de un 1
         return int(sous_reseau, 2) + 1 # retourne de la valeur du sous reseau
 
-ip = ""  # initialisation d'un String qui contiendra l'adresse ip en binaire
+
 
 while True:  # Boucle infini pour calcul adressage q quitte le programme dans n'importe qu'elle demande d'input
-
+    ip = ""  # initialisation d'un String qui contiendra l'adresse ip en binaire
     print("Voulez vous calculer l'adressage d'une adresse Ip Ipv4(a) ou Ipv6(b)?")  # asser clair
     Cond = verif_input(['a','b'])  # lit un input clavier et cond (de condition c'est francais) sera utiliser pour choisir le type d'adresse
 
