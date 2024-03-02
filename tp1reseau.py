@@ -150,5 +150,6 @@ while True:  # Boucle infini pour calcul adressage q quitte le programme dans n'
         elif int(ip,2) == 1: print("L'adresse fournit est l'adresse de bouclage")  # ::1 est l'adresse de bouclage
         else: print("l'adresse est routable") # si ni locale ni bouclage elle est routable
         print("Une adresse ipv6 n'a pas d'adresse de diffusion") #c'est vrai
-
-
+    del (ip)  # efface l'adresse ip en memoire
+    print()  # juste une ligne vide
+    print()  #juste une ligne vide
